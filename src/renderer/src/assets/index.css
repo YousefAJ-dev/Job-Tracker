@@ -1,0 +1,7 @@
+/* styles.css -- your single entry CSS */
+
+/* your custom theme & resets first */
+@import "./base.css";
+@import "./main.css";
+
+@import "tailwindcss";
