@@ -43,7 +43,7 @@ function Jobs() {
 		// while looping, compare each job's id to see when it matches the job we are updating
 		// if it is then update that job to the correct values
 		// else keep it unchanged as job
-		setJobs( prev => (prev.map(job => (job.id === updatedJob.id ? updatedJob : job))));
+		setJobs(prev => (prev.map(job => (job.id === updatedJob.id ? updatedJob : job))));
 
 		// turn off editing mode
 		setEditingJob(null);
@@ -63,8 +63,8 @@ function Jobs() {
 				<div className="flex items-center justify-center border-2 border-emerald-600 bg-zinc-600 p-6 rounded-lg shadow-lg">
 					{/* Add job form */}
 					<AddJob onAddJob={addJob}
-							editingJob={editingJob}
-							onEdit={updateItem}
+						editingJob={editingJob}
+						onEdit={updateItem}
 					/>
 				</div>
 
@@ -92,14 +92,14 @@ function Jobs() {
 									<button
 										type="button"
 										onClick={() => deleteItem(job.id)}
-										className="border-2 border-red-800 px-4 py-1 font-semibold hover:bg-red-400 active:scale-95"
+										className="border-2 border-red-800 rounded-md px-4 py-1 font-semibold hover:bg-red-400 active:scale-95"
 									>
 										Delete
 									</button>
 									<button
 										type="button"
 										onClick={() => startEditing(job)}
-										className="border-2 border-sky-800 px-4 py-1 font-semibold hover:bg-sky-300 active:scale-95"
+										className="border-2 border-sky-800 rounded-md px-4 py-1 font-semibold hover:bg-sky-300 active:scale-95"
 									>
 										Edit
 									</button>
