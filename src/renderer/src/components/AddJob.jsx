@@ -63,18 +63,17 @@ function AddJob({ onAddJob, editingJob, onEdit }) {
 			title.trim() === "" ||
 			companyName.trim() === "" ||
 			applyDate.trim() === "" ||
-			comments.trim() === "" ||
 			jobStatus.trim() === "" ||
 			phoneNumber.trim() === "" ||
 			email.trim() === ""
 		) {
 			return; // Stop if any required field is missing
 		}
-		// Validate email format
+		/* Validate email format
 		else if (!validateEmail(email)) {
 			setEmailErrorMsg("Please enter a valid email.");
 			return;
-		}
+		}*/
 		// Validate phone number format
 		else if (!validatePhoneNumber(phoneNumber)) {
 			setPnErrorMsg("Please enter a valid Phone Number.");
@@ -210,7 +209,7 @@ function AddJob({ onAddJob, editingJob, onEdit }) {
 					required
 					placeholder="example@email.com"
 					className="mt-1 block w-full rounded-md shadow-sm bg-zinc-500 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-300 focus:outline-none p-2"
-					type="email"
+					type="text"
 					value={email}
 					onChange={e => setEmail(e.target.value)}
 				/>
@@ -236,7 +235,6 @@ function AddJob({ onAddJob, editingJob, onEdit }) {
 			<div className="form-item">
 				<label className="block text-sm font-medium text-gray-100">Comments</label>
 				<textarea
-					required
 					maxLength={150}
 					placeholder="Enter your notes (max 150 characters)"
 					className="mt-1 block w-full h-[120px] resize-none rounded-md shadow-sm bg-zinc-500 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-300 focus:outline-none p-2"
