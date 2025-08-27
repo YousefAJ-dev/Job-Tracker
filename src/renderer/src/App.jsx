@@ -4,7 +4,7 @@ import Header from "./components/Navigation.jsx";
 function App() {
 
 	return (
-		<div className="min-w-[1250px] w-screen h-screen">
+		<div className="w-dvw h-dvh flex flex-col">
 			<Header />
 			<Jobs />
 		</div>

@@ -63,9 +63,7 @@ function AddJob({ onAddJob, editingJob, onEdit }) {
 			title.trim() === "" ||
 			companyName.trim() === "" ||
 			applyDate.trim() === "" ||
-			jobStatus.trim() === "" ||
-			phoneNumber.trim() === "" ||
-			email.trim() === ""
+			jobStatus.trim() === ""
 		) {
 			return; // Stop if any required field is missing
 		}
@@ -190,7 +188,6 @@ function AddJob({ onAddJob, editingJob, onEdit }) {
 			<div className="form-item">
 				<label className="block text-sm font-medium text-gray-100">Phone Number</label>
 				<input
-					required
 					placeholder="222-222-2222"
 					className="mt-1 block w-full rounded-md shadow-sm bg-zinc-500 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-300 focus:outline-none p-2"
 					type="tel"
@@ -206,7 +203,6 @@ function AddJob({ onAddJob, editingJob, onEdit }) {
 			<div className="form-item">
 				<label className="block text-sm font-medium text-gray-100">Email</label>
 				<input
-					required
 					placeholder="example@email.com"
 					className="mt-1 block w-full rounded-md shadow-sm bg-zinc-500 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-300 focus:outline-none p-2"
 					type="text"
@@ -223,7 +219,7 @@ function AddJob({ onAddJob, editingJob, onEdit }) {
 				<label className="block text-sm font-medium text-gray-100">Website Applied</label>
 				<input
 					required
-					placeholder="indeed.com"
+					placeholder="e.g indeed.com"
 					className="mt-1 block w-full rounded-md shadow-sm bg-zinc-500 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-300 focus:outline-none p-2"
 					type="text"
 					value={websiteApplied}
@@ -235,8 +231,8 @@ function AddJob({ onAddJob, editingJob, onEdit }) {
 			<div className="form-item">
 				<label className="block text-sm font-medium text-gray-100">Comments</label>
 				<textarea
-					maxLength={150}
-					placeholder="Enter your notes (max 150 characters)"
+					maxLength={250}
+					placeholder="Enter your notes (max 250 characters)"
 					className="mt-1 block w-full h-[120px] resize-none rounded-md shadow-sm bg-zinc-500 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-300 focus:outline-none p-2"
 					value={comments}
 					onChange={e => setComments(e.target.value)}
