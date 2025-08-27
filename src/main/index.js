@@ -1,7 +1,7 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
+import icon from '../../resources/JT-logo.ico?asset'
 
 function createWindow() {
 	// Create the browser window.
@@ -12,7 +12,7 @@ function createWindow() {
 		minHeight: 720, // minimum height
 		show: false,
 		autoHideMenuBar: true,
-		...(process.platform === 'linux' ? { icon } : {}),
+		icon: join(__dirname, '../../resources/JT-logo.ico'),
 		webPreferences: {
 			preload: join(__dirname, '../preload/index.js'),
 			contextIsolated: true,
@@ -72,6 +72,3 @@ app.on('window-all-closed', () => {
 		app.quit()
 	}
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.

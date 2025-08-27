@@ -1,9 +1,9 @@
 {
 	"name": "job-tracker",
 	"version": "1.0.0",
-	"description": "An Electron application with React",
+	"description": "An Electron application with React where one can track past, present and future jobs info and status",
 	"main": "./out/main/index.js",
-	"author": "example.com",
+	"author": "com.yousef.jobtracker",
 	"homepage": "https://electron-vite.org",
 	"scripts": {
 		"format": "prettier --write .",
@@ -16,6 +16,32 @@
 		"build:win": "npm run build && electron-builder --win",
 		"build:mac": "npm run build && electron-builder --mac",
 		"build:linux": "npm run build && electron-builder --linux"
+	},
+	"build": {
+		"appId": "com.yousef.jobtracker",
+		"productName": "Job Tracker",
+		"files": [
+			"out/**/*"
+		],
+		"directories": {
+			"buildResources": "resources"
+		},
+		"win": {
+			"target": "nsis",
+			"icon": "resources/icon.ico"
+		},
+		"mac": {
+			"target": "dmg",
+			"icon": "resources/icon.icns"
+		},
+		"nsis": {
+			"oneClick": false,
+			"perMachine": false,
+			"allowToChangeInstallationDirectory": true,
+			"createDesktopShortcut": true,
+			"shortcutName": "Job Tracker",
+			"runAfterFinish": true
+		}
 	},
 	"dependencies": {
 		"@electron-toolkit/preload": "^3.0.2",
